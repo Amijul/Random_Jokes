@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.jokes{
+    max-width: 800px;
+    width: 800px;
+    text-align: center;
+    margin: 140px auto 30px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 0;
+    box-shadow: 9px 6px 20px black;
+}
+
+#joke{
+    text-align: center;
+    width: 100%;
+    font-size: 23px;
+    font-weight: 500;
+    margin: 40px 0 20px;
+
+}
+
+#btn{
+    width: 110px;
+    height: 40px;
+    border: 0;
+    outline-color: white;
+    background: linear-gradient(90deg, red, cyan);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 4px 6px 13px black;
+    margin: 10px 0 40px;
+    transition: .2s;
+}
+
+.anime{
+    animation: zoomIn 2s ease forwards;
+}
+
+#btn:active{
+    scale: .8;
+    color: pink;
+    background: linear-gradient(45deg, yellow , green);
+}
+
+@keyframes zoomIn{
+    0%{
+        scale: 0;
+        
+    }
+    100%{
+        scale: 1;
+        transform: translate(0);
+    }
+
+
+}

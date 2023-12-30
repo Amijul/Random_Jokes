@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Jokes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    
+    <div class="jokes">
+        <h2>😂</h2>
+
+        <h4 id="joke">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate similique, dolor provident molestiae et rem debitis hic amet perspiciatis?</h4>
+        <br>
+        <button id="btn" onclick="createJoke()">Click Me</button>
+    </div>
+
+    <script>
+        var url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+        const joke = document.getElementById("joke");
+        const jokes = document.querySelector("#joke");
+
+        const getJoke = async ()=>{
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log(data.joke);
+            jokes.classList.add("anime");
+            joke.innerHTML = data.joke;
+
+            setTimeout(()=>{
+                jokes.classList.remove("anime");
+            }, 2000);
+        };
+        
+        const createJoke = ()=>{
+            getJoke();
+        };
+    </script>
+  </body>
+</html>
